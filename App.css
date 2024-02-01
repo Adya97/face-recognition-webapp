@@ -1,0 +1,22 @@
+.App {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.Success {
+  padding: 1rem;
+  color: green;
+  border: 1px solid green;
+  margin: 1rem auto;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+.Failure {
+  padding: 1rem;
+  color: red;
+  border: 1px solid red;
+  margin: 1rem auto;
+  width: fit-content;
+  border-radius: 5px;
+}
