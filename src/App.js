@@ -1,9 +1,12 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import Admin from './Pages/Admin';
 import { useState } from 'react';
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 const uuid = require('uuid');
 
 function App() {
-
   const [image, setImage] = useState(null);
   const [uploadResultMessage, setUploadResultMessage] = useState('Please upload an image to authenticate.');
   const [visitorName, setVisitorName] = useState('placeholder.jpg');
@@ -54,16 +57,29 @@ function App() {
   }
 
   return (
-    <div className="App">
-     <h2>Attend Face Recognition System</h2>
-     <form onSubmit={sendImage}>
-      <input type='file' name= 'image' onChange={e => setImage(e.target.files[0])}/>
-      <button type='submit'>Authenticate</button>
-      </form>
-      {/* Handle image display logic here */}
-      <div className={isAuth ? 'Success' : 'Failure'}>{uploadResultMessage}</div>
-      <img src={require(`./Visitors/${visitorName}`)} alt='Visitor' height={250} width={250}/>
-    </div>
+    <Authenticator>
+      {({ signOut, user }) => (
+        user ? 
+        <div className="App">
+          <Router>
+            <div>
+            <NavLink activeClassName="active" to="/Admin">Admin Access</NavLink>
+            </div>
+            <Routes>
+              <Route path="/admin" element={<Admin />}/>
+            </Routes>
+          </Router>
+          <h2>Attend Face Recognition System</h2>
+          <form onSubmit={sendImage}>
+            <input type='file' name='image' onChange={e => setImage(e.target.files[0])}/>
+            <button type='submit'>Authenticate</button>
+          </form>
+          <div className={isAuth ? 'Success' : 'Failure'}>{uploadResultMessage}</div>
+          <img src={require(`./Visitors/${visitorName}`)} alt='Visitor' height={250} width={250}/>
+          <button onClick={signOut}>Sign Out</button>
+        </div> : <Admin />
+      )}
+    </Authenticator>
   );
 }
 

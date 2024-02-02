@@ -1,22 +1,101 @@
+/* Reset some basic elements */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style for the main App container */
 .App {
-  margin-top: 2rem;
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Navigation link styles */
+nav div a {
+  text-decoration: none;
+  color: #007bff;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav div a.active, nav div a:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* Form styling */
+form {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+input[type='file'] {
+  font-size: 16px;
+}
+
+button {
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Success and Failure message styles */
+.Success, .Failure {
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  width: 90%;
+  max-width: 600px;
   text-align: center;
 }
 
 .Success {
-  padding: 1rem;
-  color: green;
-  border: 1px solid green;
-  margin: 1rem auto;
-  width: fit-content;
-  border-radius: 5px;
+  background-color: #28a745;
 }
 
 .Failure {
-  padding: 1rem;
-  color: red;
-  border: 1px solid red;
-  margin: 1rem auto;
-  width: fit-content;
+  background-color: #dc3545;
+}
+
+/* Image styling */
+img {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Sign out button - placed at bottom */
+button.signOut {
+  background-color: #dc3545;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  form, .Success, .Failure {
+    width: 95%;
+  }
 }
