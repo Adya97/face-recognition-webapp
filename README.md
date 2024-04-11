@@ -1,4 +1,6 @@
 # face-recognition-webapp
+![MainArchitectureDiagram](https://github.com/Adya97/face-recognition-webapp/assets/72440232/0adc232b-bc59-41c3-a3b0-2f2726147ae4)
+
 AWS Final Project
 =======
 # Getting Started with Create React App
