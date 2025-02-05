@@ -4,17 +4,9 @@
 AWS Final Project
 =======
 
-# Face Recognition Webapp
-
-![MainArchitectureDiagram](https://github.com/Adya97/face-recognition-webapp/assets/72440232/0adc232b-bc59-41c3-a3b0-2f2726147ae4)
-
 ## Description
 
 This is the final project for AWS certification, which demonstrates a web application capable of recognizing faces in images. The application leverages several AWS services for image processing and storage.
-
-## Architecture Diagram
-
-![MainArchitectureDiagram](https://github.com/Adya97/face-recognition-webapp/assets/72440232/0adc232b-bc59-41c3-a3b0-2f2726147ae4)
 
 ## Installation
 
